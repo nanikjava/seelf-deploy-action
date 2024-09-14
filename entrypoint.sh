@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash -l
 
 URL=$1
 TOKEN=$2
@@ -49,7 +49,7 @@ do
         break
     elif [ $status == "3" ]; then
         echo "Deployment succeeded!"
-        echo "url=$(cat result.json | jq -r '.state.services[].entrypoints[] | select( .is_custom == false ).url')" >> $GITHUB_OUTPUT
+        echo "url=$(cat result.json | jq -r '.state.services[].entrypoints[] | select( .is_custom == false ).url')"
         break
     fi
 
